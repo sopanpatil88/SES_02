@@ -1,0 +1,115 @@
+<section id="our-campus" class="campus-section">
+  <div class="campus-wrapper">
+    <span class="campus-label">OUR CAMPUS</span>
+    <h2 class="campus-title">World-Class Facilities</h2>
+    <p class="campus-subtitle">
+      Our campus is designed to provide an inspiring environment for learning,
+      creativity, and physical development.
+    </p>
+
+    <!-- Filter buttons -->
+    <div class="campus-filters">
+      <button class="campus-filter active" data-filter="all">All Facilities</button>
+      <button class="campus-filter" data-filter="laboratories">Laboratories</button>
+      <button class="campus-filter" data-filter="library">Library</button>
+      <button class="campus-filter" data-filter="technology">Technology</button>
+      <button class="campus-filter" data-filter="sports">Sports</button>
+      <button class="campus-filter" data-filter="arts">Arts &amp; Music</button>
+    </div>
+
+    <!-- Cards grid -->
+    <div class="campus-grid">
+      <!-- Science Laboratories -->
+      <article class="campus-card" data-category="laboratories">
+        <div class="campus-image" style="background-image: url('{{ url_for('static', filename='images/campus-lab.jpg') }}');"></div>
+        <div class="campus-content">
+          <h3 class="campus-card-title">Science Laboratories</h3>
+          <p class="campus-card-text">
+            Fully equipped Physics, Chemistry, and Biology labs with modern equipment for hands-on experiments.
+          </p>
+        </div>
+      </article>
+
+      <!-- Digital Library -->
+      <article class="campus-card" data-category="library">
+        <div class="campus-image" style="background-image: url('{{ url_for('static', filename='images/campus-library.jpg') }}');"></div>
+        <div class="campus-content">
+          <h3 class="campus-card-title">Digital Library</h3>
+          <p class="campus-card-text">
+            Extensive collection of books, journals, and digital resources in our spacious, air-conditioned library.
+          </p>
+        </div>
+      </article>
+
+      <!-- Smart Classrooms -->
+      <article class="campus-card" data-category="technology">
+        <div class="campus-image" style="background-image: url('{{ url_for('static', filename='images/campus-smartclass.jpg') }}');"></div>
+        <div class="campus-content">
+          <h3 class="campus-card-title">Smart Classrooms</h3>
+          <p class="campus-card-text">
+            Interactive smart boards and digital learning tools in every classroom for enhanced engagement.
+          </p>
+        </div>
+      </article>
+
+      <!-- Sports Complex -->
+      <article class="campus-card" data-category="sports">
+        <div class="campus-image" style="background-image: url('{{ url_for('static', filename='images/campus-sports.jpg') }}');"></div>
+        <div class="campus-content">
+          <h3 class="campus-card-title">Sports Complex</h3>
+          <p class="campus-card-text">
+            Multi-purpose sports ground, basketball court, and indoor games facilities for all-round development.
+          </p>
+        </div>
+      </article>
+
+      <!-- Art & Music Studio -->
+      <article class="campus-card" data-category="arts">
+        <div class="campus-image" style="background-image: url('{{ url_for('static', filename='images/campus-arts.jpg') }}');"></div>
+        <div class="campus-content">
+          <h3 class="campus-card-title">Art &amp; Music Studio</h3>
+          <p class="campus-card-text">
+            Dedicated spaces for visual arts, music, and dance with professional instructors.
+          </p>
+        </div>
+      </article>
+
+      <!-- Computer Lab -->
+      <article class="campus-card" data-category="technology">
+        <div class="campus-image" style="background-image: url('{{ url_for('static', filename='images/campus-computerlab.jpg') }}');"></div>
+        <div class="campus-content">
+          <h3 class="campus-card-title">Computer Lab</h3>
+          <p class="campus-card-text">
+            Modern computer lab with latest systems and high-speed internet for digital literacy.
+          </p>
+        </div>
+      </article>
+    </div>
+  </div>
+
+  <!-- Simple filter script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const buttons = document.querySelectorAll(".campus-filter");
+      const cards = document.querySelectorAll(".campus-card");
+
+      buttons.forEach(btn => {
+        btn.addEventListener("click", () => {
+          const filter = btn.getAttribute("data-filter");
+
+          buttons.forEach(b => b.classList.remove("active"));
+          btn.classList.add("active");
+
+          cards.forEach(card => {
+            const category = card.getAttribute("data-category");
+            if (filter === "all" || category === filter) {
+              card.style.display = "flex";
+            } else {
+              card.style.display = "none";
+            }
+          });
+        });
+      });
+    });
+  </script>
+</section>

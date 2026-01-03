@@ -1,0 +1,136 @@
+.campus-section {
+  padding: 90px 7%;
+  background-color: #f5f5f0;
+}
+
+.campus-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.campus-label {
+  display: inline-block;
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #c06724;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.campus-title {
+  font-size: 40px;
+  font-weight: 700;
+  color: #1f2933;
+  margin-bottom: 8px;
+  text-align: left;
+}
+
+.campus-subtitle {
+  max-width: 680px;
+  font-size: 16px;
+  color: #4b5563;
+  margin-bottom: 28px;
+}
+
+/* Filter buttons */
+
+.campus-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+.campus-filter {
+  border: none;
+  padding: 10px 22px;
+  border-radius: 999px;
+  background-color: #f3f4f6;
+  color: #374151;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.campus-filter:hover {
+  background-color: #e5e7eb;
+}
+
+.campus-filter.active {
+  background-color: #e76f2b;
+  color: #ffffff;
+  box-shadow: 0 8px 20px rgba(231, 111, 43, 0.4);
+}
+
+/* Cards grid */
+
+.campus-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.campus-card {
+  background-color: #ffffff;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 18px 35px rgba(15, 23, 42, 0.08);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.campus-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 22px 45px rgba(15, 23, 42, 0.14);
+}
+
+.campus-image {
+  height: 220px;
+  background-size: cover;
+  background-position: center center;
+}
+
+.campus-content {
+  padding: 18px 20px 22px;
+}
+
+.campus-card-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 6px;
+}
+
+.campus-card-text {
+  font-size: 14px;
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+/* Responsive */
+
+@media (max-width: 1024px) {
+  .campus-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .campus-section {
+    padding: 80px 6%;
+  }
+}
+
+@media (max-width: 768px) {
+  .campus-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .campus-section {
+    padding: 60px 5%;
+  }
+
+  .campus-title {
+    font-size: 32px;
+  }
+}

@@ -1,0 +1,130 @@
+<section id="beyond-academics" class="beyond-section">
+  <div class="beyond-wrapper">
+    <span class="beyond-label">BEYOND ACADEMICS</span>
+    <h2 class="beyond-title">Holistic Development</h2>
+    <p class="beyond-subtitle">
+      Education at Shantiniketan goes beyond textbooks. We offer diverse programs
+      to develop well-rounded individuals.
+    </p>
+
+    <!-- Tabs -->
+    <div class="beyond-tabs">
+      <button class="beyond-tab active" data-tab="0">Sports &amp; Athletics</button>
+      <button class="beyond-tab" data-tab="1">Arts &amp; Creativity</button>
+      <button class="beyond-tab" data-tab="2">Performing Arts</button>
+      <button class="beyond-tab" data-tab="3">Clubs &amp; Activities</button>
+    </div>
+
+    <!-- Single card with changing content -->
+    <div class="beyond-card">
+      <div class="beyond-image-container">
+        <div class="beyond-image" id="beyond-image"></div>
+        <div class="beyond-image-overlay">
+          <span class="beyond-image-title" id="beyond-image-title">Sports &amp; Athletics</span>
+        </div>
+      </div>
+      
+      <div class="beyond-content">
+        <h3 class="beyond-card-title" id="beyond-title">Sports &amp; Athletics</h3>
+        <p class="beyond-text" id="beyond-text">
+          Our comprehensive sports program develops physical fitness, teamwork,
+          and competitive spirit. Students participate in various inter-school tournaments.
+        </p>
+        
+        <h4 class="beyond-mini-title">Activities &amp; Programs</h4>
+        <div class="beyond-tags" id="beyond-tags">
+          <span class="beyond-tag">Football</span>
+          <span class="beyond-tag">Cricket</span>
+          <span class="beyond-tag">Basketball</span>
+          <span class="beyond-tag">Athletics</span>
+        </div>
+        
+        <div class="beyond-footer">
+          <span class="beyond-foot-item" id="beyond-foot1">🏆 Inter-school competitions</span>
+          <span class="beyond-foot-item" id="beyond-foot2">📘 Expert coaches &amp; instructors</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+const tabData = [
+  {
+    image: '{{ url_for("static", filename="images/sports-ground.jpg") }}',
+    imageTitle: 'Sports &amp; Athletics',
+    imagePos: '55% 25%',
+    title: 'Sports &amp; Athletics',
+    text: 'Our comprehensive sports program develops physical fitness, teamwork, and competitive spirit. Students participate in various inter-school tournaments.',
+    tags: ['Football', 'Cricket', 'Basketball', 'Athletics', 'Badminton', 'Table Tennis', 'Yoga'],
+    foot1: '🏆 Inter-school competitions',
+    foot2: '📘 Expert coaches &amp; instructors'
+  },
+  {
+    image: '{{ url_for("static", filename="images/arts-creativity.jpg") }}',
+    imageTitle: 'Arts &amp; Creativity',
+    imagePos: '50% 35%',
+    title: 'Arts &amp; Creativity',
+    text: 'We nurture talents through dedicated programs in visual arts and exhibitions. Students showcase their creativity in annual art exhibitions.',
+    tags: ['Painting', 'Drawing', 'Sculpture', 'Digital Art', 'Craft Work', 'Photography'],
+    foot1: '🎨 Inter-school exhibitions',
+    foot2: '📚 Expert art instructors'
+  },
+  {
+    image: '{{ url_for("static", filename="images/performing-arts.jpg") }}',
+    imageTitle: 'Performing Arts',
+    imagePos: '50% 25%',
+    title: 'Performing Arts',
+    text: 'Our performing arts program includes classical and contemporary music, dance, theatre. Students perform at cultural events throughout the year.',
+    tags: ['Classical Music', 'Western Music', 'Classical Dance', 'Drama', 'Theatre', 'Public Speaking'],
+    foot1: '🎭 Inter-school events',
+    foot2: '🎼 Expert instructors'
+  },
+  {
+    image: '{{ url_for("static", filename="images/clubs-activities.jpg") }}',
+    imageTitle: 'Clubs &amp; Activities',
+    imagePos: '60% 30%',
+    title: 'Clubs &amp; Activities',
+    text: 'Student clubs provide opportunities to explore interests beyond academics. Each club meets weekly and organizes special events.',
+    tags: ['Science Club', 'Eco Club', 'Literary Club', 'Debate Society', 'Robotics Club'],
+    foot1: '🤝 Leadership workshops',
+    foot2: '🌟 Community projects'
+  }
+];
+
+document.addEventListener('DOMContentLoaded', function() {
+  const tabs = document.querySelectorAll('.beyond-tab');
+  
+  tabs.forEach((tab, index) => {
+    tab.addEventListener('click', function() {
+      tabs.forEach(t => t.classList.remove('active'));
+      this.classList.add('active');
+      
+      const data = tabData[index];
+      
+      // Perfect image positioning + overlay title
+      const imgEl = document.getElementById('beyond-image');
+      const imgTitleEl = document.getElementById('beyond-image-title');
+      imgEl.style.backgroundImage = `url(${data.image})`;
+      imgEl.style.backgroundPosition = data.imagePos;
+      imgTitleEl.textContent = data.imageTitle;
+      
+      // Update content
+      document.getElementById('beyond-title').textContent = data.title;
+      document.getElementById('beyond-text').textContent = data.text;
+      document.getElementById('beyond-foot1').textContent = data.foot1;
+      document.getElementById('beyond-foot2').textContent = data.foot2;
+      
+      // Update tags
+      const tagsContainer = document.getElementById('beyond-tags');
+      tagsContainer.innerHTML = '';
+      data.tags.forEach(tag => {
+        const span = document.createElement('span');
+        span.className = 'beyond-tag';
+        span.textContent = tag;
+        tagsContainer.appendChild(span);
+      });
+    });
+  });
+});
+</script>

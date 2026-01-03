@@ -1,0 +1,197 @@
+/* ===== ACADEMICS SECTION ===== */
+
+.academics-section {
+  padding: 90px 7% 80px;
+  background-color: #f4f5f7;
+  font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.academics-container {
+  max-width: 1180px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.academics-label {
+  display: inline-block;
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #c86b3c;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.academics-title {
+  font-size: 36px;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 10px;
+}
+
+.academics-subtitle {
+  max-width: 680px;
+  margin: 0 auto 40px;
+  font-size: 14px;
+  color: #6b7280;
+}
+
+/* Cards grid */
+
+.academics-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);  /* Exactly 2x2 */
+  gap: 28px;
+  margin-top: 40px;
+}
+
+/* Card */
+
+.academics-card {
+  background: #ffffff;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+  text-align: left;
+}
+
+/* Card top image */
+
+.academics-image-wrapper {
+  position: relative;
+  height: 230px;
+  overflow: hidden;
+}
+
+.academics-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transform: scale(1.03);
+  transition: transform 0.5s ease;
+}
+
+.academics-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(15, 23, 42, 0.65), transparent 55%);
+}
+
+.academics-image-text {
+  position: absolute;
+  left: 24px;
+  bottom: 20px;
+  color: #f9fafb;
+}
+
+.academics-age {
+  font-size: 13px;
+  margin-bottom: 4px;
+}
+
+.academics-card-heading {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.academics-grade {
+  font-size: 13px;
+}
+
+.academics-card:hover .academics-image {
+  transform: scale(1.07);
+}
+
+/* Card body */
+
+.academics-card-body {
+  padding: 22px 24px 20px;
+}
+
+.academics-card-desc {
+  font-size: 14px;
+  color: #4b5563;
+  margin-bottom: 14px;
+}
+
+/* Bullet list with custom check icon */
+
+.academics-list {
+  list-style: none;
+  margin: 0 0 18px;
+  padding: 0;
+}
+
+.academics-list li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 6px;
+  font-size: 14px;
+  color: #4b5563;
+}
+
+.academics-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #f97316;
+  font-size: 14px;
+}
+
+/* Learn more */
+
+.academics-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #c86b3c;
+  text-decoration: none;
+}
+
+.academics-link:hover {
+  text-decoration: underline;
+}
+
+/* Secondary grid (new addition) */
+.academics-grid-secondary {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+  margin-top: 40px;
+}
+
+/* Update existing academics-grid to have top margin */
+.academics-grid {
+  margin-bottom: 40px;
+}
+
+/* Responsive for secondary grid */
+@media (max-width: 960px) {
+  .academics-grid-secondary {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* Responsive */
+
+@media (max-width: 960px) {
+  .academics-section {
+    padding: 70px 5% 60px;
+  }
+
+  .academics-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .academics-title {
+    font-size: 28px;
+  }
+}
+
+

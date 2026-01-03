@@ -1,0 +1,119 @@
+<section id="testimonials" class="testimonials-section">
+  <div class="testimonials-wrapper">
+    <span class="testimonials-label">TESTIMONIALS</span>
+    <h2 class="testimonials-title">Voices of Our Community</h2>
+    <p class="testimonials-subtitle">
+      Hear from parents, students, Shantiniketan alumni, and faculty about their experiences.
+    </p>
+
+    <div class="testimonials-slider">
+      <!-- Testimonial 1: Student -->
+      <div class="testimonial-card active">
+        <div class="testimonial-content">
+          <div class="testimonial-main">
+            <div class="quote-icon">„</div>
+            <div class="testimonial-quote">
+              "I love how our teachers make learning fun and interesting. The sports and arts programs help us discover our talents beyond textbooks."
+            </div>
+          </div>
+          <div class="testimonial-footer">
+            <img src="{{ url_for('static', filename='images/anaya-avatar.jpg') }}" alt="Anaya Patel" class="author-avatar">
+            <div class="author-details">
+              <div class="author-name">Anaya Patel</div>
+              <div class="author-role">Student</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonial 2: Parent -->
+      <div class="testimonial-card">
+        <div class="testimonial-content">
+          <div class="testimonial-main">
+            <div class="quote-icon">„</div>
+            <div class="testimonial-quote">
+              "Shantiniketan has been instrumental in shaping my daughter's personality. The teachers go above and beyond to ensure every child reaches their potential."
+            </div>
+          </div>
+          <div class="testimonial-footer">
+            <img src="{{ url_for('static', filename='images/priya-avatar.jpg') }}" alt="Priya Sharma" class="author-avatar">
+            <div class="author-details">
+              <div class="author-name">Priya Sharma</div>
+              <div class="author-role">Parent</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonial 3: Alumni -->
+      <div class="testimonial-card">
+        <div class="testimonial-content">
+          <div class="testimonial-main">
+            <div class="quote-icon">„</div>
+            <div class="testimonial-quote">
+              "The values and education I received at Shantiniketan prepared me for success at IIT. The foundation was strong and the memories are forever."
+            </div>
+          </div>
+          <div class="testimonial-footer">
+            <img src="{{ url_for('static', filename='images/rahul-avatar.jpg') }}" alt="Rahul Verma" class="author-avatar">
+            <div class="author-details">
+              <div class="author-name">Rahul Verma</div>
+              <div class="author-role">Alumni</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonial 4: Faculty -->
+      <div class="testimonial-card">
+        <div class="testimonial-content">
+          <div class="testimonial-main">
+            <div class="quote-icon">„</div>
+            <div class="testimonial-quote">
+              "Teaching at Shantiniketan is a privilege. The school's commitment to holistic education and professional development makes it special."
+            </div>
+          </div>
+          <div class="testimonial-footer">
+            <img src="{{ url_for('static', filename='images/suresh-avatar.jpg') }}" alt="Mr. Suresh Kumar" class="author-avatar">
+            <div class="author-details">
+              <div class="author-name">Mr. Suresh Kumar</div>
+              <div class="author-role">Faculty</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pagination -->
+    <div class="testimonials-pagination">
+      <button class="nav-btn prev">‹</button>
+      <div class="dots-container">
+        <span class="dot active" data-slide="0"></span>
+        <span class="dot" data-slide="1"></span>
+        <span class="dot" data-slide="2"></span>
+        <span class="dot" data-slide="3"></span>
+      </div>
+      <button class="nav-btn next">›</button>
+    </div>
+  </div>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const cards = document.querySelectorAll('.testimonial-card');
+  const dots = document.querySelectorAll('.dot');
+  const prevBtn = document.querySelector('.prev');
+  const nextBtn = document.querySelector('.next');
+  let current = 0;
+
+  function showSlide(index) {
+    cards.forEach((card, i) => card.classList.toggle('active', i === index));
+    dots.forEach((dot, i) => dot.classList.toggle('active', i === index));
+    current = index;
+  }
+
+  prevBtn.onclick = () => showSlide((current - 1 + 4) % 4);
+  nextBtn.onclick = () => showSlide((current + 1) % 4);
+  dots.forEach((dot, index) => dot.onclick = () => showSlide(index));
+});
+</script>

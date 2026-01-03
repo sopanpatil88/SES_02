@@ -1,0 +1,160 @@
+/* ================= SLIDER CONTAINER ================= */
+.slider-container {
+    position: relative;
+    overflow: hidden;
+    height: 90vh; /* full viewport height */
+}
+
+/* ================= SLIDER WRAPPER ================= */
+.slider {
+    display: flex;
+    width: 200%; /* 2 slides */
+    height: 100%;
+    transition: transform 0.8s ease-in-out;
+}
+
+/* ================= EACH SLIDE ================= */
+.slide {
+    width: 50%; /* each slide takes half of slider */
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+/* ================= OVERLAY ================= */
+.overlay {
+    position: absolute;
+    inset: 0; /* top:0; left:0; right:0; bottom:0 */
+    background: rgba(0, 0, 0, 0.55); /* slightly darker for readability */
+}
+
+/* ================= SLIDE CONTENT ================= */
+.content {
+    position: absolute;
+    top: 50%; 
+    left: 10%; /* left-aligned */
+    transform: translateY(-50%); /* vertical centering */
+    color: #fff;
+    max-width: 700px;
+    text-align: left;
+    z-index: 2;
+}
+
+.content span {
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.content h1 {
+    font-size: 48px;
+    margin: 20px 0;
+}
+
+.content p {
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+
+/* ================= SLIDE BUTTONS ================= */
+.buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.buttons button {
+    padding: 12px 22px;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.primary {
+    background-color: #ff7f50;
+    color: #fff;
+}
+
+.primary:hover {
+    background-color: #e06b3d;
+}
+
+.secondary {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    border: 1px solid #fff;
+}
+
+.secondary:hover {
+    background-color: rgba(255, 255, 255, 0.35);
+}
+
+/* ================= SLIDE STATS ================= */
+.slide-stats {
+    position: absolute;
+    bottom: 50px;
+    left: 10%; /* align with content */
+    display: flex;
+    gap: 25px;
+    z-index: 2;
+}
+
+.stat-box {
+    background: rgba(0, 0, 0, 0.65);
+    color: #fff;
+    padding: 18px 30px;
+    border-radius: 12px;
+    text-align: center;
+    min-width: 120px;
+}
+
+.stat-box h2 {
+    font-size: 20px;
+}
+
+.stat-box p {
+    font-size: 13px;
+    opacity: 0.85;
+}
+
+/* ================= ARROWS ================= */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    background-color: rgba(255,255,255,0.5);
+    border: none;
+    cursor: pointer;
+    z-index: 10;
+    padding: 10px 15px;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.arrow:hover {
+    background-color: rgba(255,255,255,0.8);
+}
+
+.arrow.left { left: 15px; }
+.arrow.right { right: 15px; }
+
+/* ================= RESPONSIVE ================= */
+@media screen and (max-width: 768px) {
+    .content {
+        left: 5%;
+        max-width: 90%;
+        padding-right: 10px;
+    }
+    .content h1 {
+        font-size: 36px;
+    }
+    .slide-stats {
+        flex-direction: column;
+        bottom: 20px;
+    }
+    .stat-box {
+        min-width: 100px;
+    }
+}
