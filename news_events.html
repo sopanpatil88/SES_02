@@ -1,0 +1,52 @@
+<section class="news-events-section">
+    <div class="news-events-wrapper">
+        <span class="section-label">NEWS & EVENTS</span>
+        <h1 class="section-title">Latest Updates & Events</h1>
+        <p class="section-subtitle">
+            Stay connected with Shantiniketan's achievements, events, and latest updates.
+        </p>
+
+        <div class="news-grid">
+            <!-- Sports Day (Top Left - Large featured) -->
+            <article class="news-card news-featured">
+                <img src="{{ url_for('static', filename='images/sports-ground.jpg') }}" alt="Annual Sports Day 2024" class="news-image">
+                <div class="news-content">
+                    <h3 class="news-title">Annual Sports Day 2024</h3>
+                    <p class="news-desc">Students showcased their athletic talents in various track and field events.</p>
+                    <span class="read-more">Read more →</span>
+                </div>
+            </article>
+
+            <!-- Science Expo (Top Right) -->
+            <article class="news-card">
+                <img src="{{ url_for('static', filename='images/campus-lab.jpg') }}" alt="Science Expo Winners" class="news-image">
+                <div class="news-content">
+                    <h3 class="news-title">Science Expo Winners</h3>
+                    <p class="news-desc">Students won multiple awards at inter-school science exhibition.</p>
+                </div>
+            </article>
+
+            <!-- Cultural Fest (Bottom Left) -->
+            <article class="news-card">
+                <img src="{{ url_for('static', filename='images/campus-arts.jpg') }}" alt="Cultural Fest 2024" class="news-image">
+                <div class="news-content">
+                    <h3 class="news-title">Cultural Fest 2024</h3>
+                    <p class="news-desc">Annual cultural fest celebrated rich diversity of India.</p>
+                </div>
+            </article>
+
+            <!-- Community Service (Bottom Right) -->
+            <article class="news-card">
+                <img src="{{ url_for('static', filename='images/school.jpg') }}" alt="Community Service" class="news-image">
+                <div class="news-content">
+                    <h3 class="news-title">Community Service Initiative</h3>
+                    <p class="news-desc">Students participated in plantation drive contributing to environment.</p>
+                </div>
+            </article>
+        </div>
+
+        <div class="news-cta">
+            <a href="#" class="cta-button">View All News & Events</a>
+        </div>
+    </div>
+</section>

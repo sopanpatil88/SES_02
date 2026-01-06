@@ -1,0 +1,253 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+.admissions-section {
+    background-color: #f5f4ed;
+    padding: 80px 6% 70px;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.admissions-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Top heading */
+.section-label {
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #b27939;
+    font-size: 11px;
+    font-weight: 500;
+    margin-bottom: 12px;
+    display: block;
+}
+
+.admissions-title {
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #1f2937;
+}
+
+.admissions-subtitle {
+    max-width: 640px;
+    margin: 0 auto 40px;
+    font-size: 16px;
+    color: #64748b;
+}
+
+/* Process heading */
+.process-heading {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 28px;
+    color: #1f2937;
+}
+
+/* Steps row */
+.admission-steps {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 18px;
+    margin-bottom: 50px;
+}
+
+.step-card {
+    background-color: #f8f7f1;
+    border-radius: 20px;
+    padding: 26px 18px 24px;
+    position: relative;
+    box-shadow: 0 14px 40px rgba(0,0,0,0.06);
+    text-align: center;
+}
+
+.step-card::after {
+    content: "→";
+    position: absolute;
+    right: -10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #d0d4da;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.step-card:last-child::after {
+    content: "";
+}
+
+.step-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 999px;
+    margin: 0 auto 10px;
+    background-color: #e76b24;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.step-icon img {
+    width: 28px;
+    height: 28px;
+}
+
+.step-number {
+    font-size: 12px;
+    color: #9ca3af;
+    margin-bottom: 4px;
+}
+
+.step-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 6px;
+}
+
+.step-text {
+    font-size: 13px;
+    color: #6b7280;
+    line-height: 1.5;
+}
+
+/* Bottom row */
+.admissions-bottom {
+    display: grid;
+    grid-template-columns: 1.05fr 1.1fr;
+    gap: 24px;
+    margin-top: 10px;
+    text-align: left;
+}
+
+/* Age criteria card */
+.age-criteria-card {
+    background-color: #f8f7f1;
+    border-radius: 20px;
+    padding: 26px 24px 20px;
+    box-shadow: 0 14px 40px rgba(0,0,0,0.06);
+}
+
+.age-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 18px;
+    color: #1f2937;
+}
+
+.age-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid #e5e7eb;
+    font-size: 14px;
+    color: #374151;
+}
+
+.age-row:last-of-type {
+    border-bottom: none;
+}
+
+.age-class {
+    font-weight: 500;
+}
+
+.age-value {
+    color: #4b5563;
+}
+
+.age-note {
+    font-size: 12px;
+    color: #9ca3af;
+    margin-top: 12px;
+}
+
+/* Apply card */
+.apply-card {
+    background-color: #9a3d00;
+    border-radius: 20px;
+    padding: 32px 30px 26px;
+    color: #fef8f0;
+    box-shadow: 0 18px 50px rgba(0,0,0,0.18);
+}
+
+.apply-title {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.apply-text {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 26px;
+    color: #fde9d4;
+}
+
+.apply-btn {
+    width: 100%;
+    border-radius: 999px;
+    padding: 14px 18px;
+    font-size: 14px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    margin-bottom: 10px;
+}
+
+.primary-btn {
+    background-color: #0f766e;
+    color: #ecfeff;
+}
+
+.primary-btn:hover {
+    background-color: #0a4f4a;
+}
+
+.secondary-btn {
+    background-color: transparent;
+    color: #fde9d4;
+    border: 1px solid rgba(253, 233, 212, 0.6);
+}
+
+.secondary-btn:hover {
+    background-color: rgba(253, 233, 212, 0.12);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .admission-steps {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        row-gap: 20px;
+    }
+
+    .admissions-bottom {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .admissions-section {
+        padding: 60px 5% 60px;
+    }
+
+    .admission-steps {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .step-card::after {
+        display: none;
+    }
+}
+
+@media (max-width: 520px) {
+    .admission-steps {
+        grid-template-columns: 1fr;
+    }
+
+    .admissions-title {
+        font-size: 32px;
+    }
+}

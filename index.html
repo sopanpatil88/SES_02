@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shantiniketan English School</title>
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/about_us.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/academics.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/beyondacademics.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/our_campus.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/testimonials.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/our_faculty.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/news_events.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/admissions.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/contact_us.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/footer.css') }}">
+
+
+
+    
+
+
+
+
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- ================= TOP BAR ================= -->
+<div class="top-bar">
+    <div class="left">
+        📞 +91 98765 43210 &nbsp;&nbsp; ✉️ info@shantiniketanschool.edu
+    </div>
+    <div class="right">
+        Monday - Saturday: 8:00 AM - 4:00 PM
+    </div>
+</div>
+
+<!-- ================= NAVBAR ================= -->
+<nav class="navbar">
+    <div class="logo">
+        <span class="logo-box">S</span>
+        <div>
+            <h3>Shantiniketan</h3>
+            <p>English School</p>
+        </div>
+    </div>
+
+    <ul class="nav-links">
+        <li><a href="{{ url_for('home') }}">Home</a></li>
+        <li><a href="#about-us">About</a></li>
+
+        <li><a href="#academics">Academics</a></li>
+        <li><a href="#our-campus">Campus</a></li>
+        <li><a href="#">Faculty</a></li>
+        <li><a href="#">News</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+
+    <a href="#" class="admission-btn">Admissions</a>
+</nav>
+
+<!-- ================= HERO SLIDER ================= -->
+<div class="slider-container">
+    <div class="slider" id="slider">
+
+        <!-- Slide 1 -->
+        <section class="slide" style="background-image: url('{{ url_for('static', filename='images/slide1.jpg') }}');">
+            <div class="overlay"></div>
+            <div class="content left-align">
+                <span class="tagline">CBSE AFFILIATED | ESTABLISHED 1995</span>
+                <h1>Inspiring Curiosity,<br>Building Futures</h1>
+                <p>Empowering students from Jr. KG to 10th with world-class education</p>
+
+                <div class="buttons">
+                    <button class="primary">Schedule a Visit</button>
+                    <button class="secondary">Explore Academics</button>
+                </div>
+
+                <div class="slide-stats">
+                    <div class="stat-box">
+                        <h3>ESTABLISHED</h3>
+                        <p>1995</p>
+                    </div>
+                    <div class="stat-box">
+                        <h3>STUDENT-TEACHER RATIO</h3>
+                        <p>20:1</p>
+                    </div>
+                    <div class="stat-box">
+                        <h3>CBSE AFFILIATED</h3>
+                        <p>Yes</p>
+                    </div>
+                    <div class="stat-box">
+                        <h3>STUDENTS</h3>
+                        <p>1500+</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 2 -->
+        <section class="slide" style="background-image: url('{{ url_for('static', filename='images/slide2.jpg') }}');">
+            <div class="overlay"></div>
+            <div class="content left-align">
+                <span class="tagline">CBSE AFFILIATED | ESTABLISHED 1995</span>
+                <h1>Beyond the Classroom</h1>
+                <p>Developing well-rounded individuals through sports, arts, and character building</p>
+
+                <div class="buttons">
+                    <button class="primary">Schedule a Visit</button>
+                    <button class="secondary">Explore Academics</button>
+                </div>
+
+                <div class="slide-stats">
+                    <div class="stat-box">
+                        <h3>ESTABLISHED</h3>
+                        <p>1995</p>
+                    </div>
+                    <div class="stat-box">
+                        <h3>STUDENT-TEACHER RATIO</h3>
+                        <p>20:1</p>
+                    </div>
+                    <div class="stat-box">
+                        <h3>CBSE AFFILIATED</h3>
+                        <p>Yes</p>
+                    </div>
+                    <div class="stat-box">
+                        <h3>STUDENTS</h3>
+                        <p>1500+</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    
+
+
+    <!-- Slider Arrows -->
+    <button class="arrow left" onclick="prevSlide()">&#10094;</button>
+    <button class="arrow right" onclick="nextSlide()">&#10095;</button>
+</div>
+
+{% include 'about_us.html' %}
+{% include 'academics.html' %}
+{% include 'beyondacademics.html' %}
+{% include 'our_campus.html' %}
+{% include 'testimonials.html' %}
+{% include 'our_faculty.html' %}
+{% include 'news_events.html' %}
+{% include 'admissions.html' %}
+{% include 'contact_us.html' %}
+{% include 'footer.html' %}
+
+<!-- ================= SLIDER SCRIPT ================= -->
+<script>
+let currentSlide = 0;
+const slides = document.getElementById('slider');
+const totalSlides = 2;
+
+function updateSlide() {
+    slides.style.transform = `translateX(-${currentSlide * 50}%)`;
+}
+
+function nextSlide() {
+    currentSlide = (currentSlide + 1) % totalSlides;
+    updateSlide();
+}
+
+function prevSlide() {
+    currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+    updateSlide();
+}
+</script>
+
+</body>
+</html>
+
+
+<!-- sopan chavan-->
